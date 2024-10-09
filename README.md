@@ -16,6 +16,7 @@ You will also need to install the following from sources:
 - [nerfstudio](https://github.com/nerfstudio-project/nerfstudio)
 - [lightglue](https://github.com/cvg/LightGlue)
 - [Hloc](https://github.com/cvg/Hierarchical-Localization)
+- [Feat2map](https://github.com/ais-lab/feat2map)
 
 ## Supported datasets 
 - [Microsoft 7scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
@@ -23,14 +24,14 @@ You will also need to install the following from sources:
 
 
 ## How to use 
-The code is still under refactoring so it may be confusing while reading.
+The code is still under refactoring so it still contains hardcode and bugs.
 
 - Hloc need to run first in order to obtain the sfm model (in this case we use triangulation from superpoint+superglue).
 - Extract a subset of the dataset to train nerf on by `preprocessing.py`.
 - Generate novel poses using `create_novel_pose.py`
 - Generate synthetic images by using `view_synthesis.py`
 - Generate descriptors by matching using `generate_synthetic.py`
-- 
+- Finally training both synthetic and original data using Feat2map
 
 ## Citation
 Consider citing if you find this usefull
