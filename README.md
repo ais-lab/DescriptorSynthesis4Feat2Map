@@ -2,8 +2,11 @@
 ### [Project Page](https://austrianoakvn.github.io/nerf-vloc) | [Paper](https://arxiv.org/pdf/2403.10297)
 
 ## Demo 
- ![system](assets/web_demo.mp4)
- ![demo](assets/office_crop_pcd.mp4)
+
+https://github.com/user-attachments/assets/98071e95-8ace-417e-a44c-58f5c62f6af8
+
+
+
 
 ## Installation 
 
