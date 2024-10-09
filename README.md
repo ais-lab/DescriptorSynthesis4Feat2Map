@@ -1,5 +1,5 @@
 # Descriptor Synthesis by NeRF for D2S
-### [Project Page](https://austrianoakvn.github.io/nerf-vloc) | [Paper](https://arxiv.org/pdf/2403.10297)
+### [Project Page](https://austrianoakvn.github.io/nerfvloc) | [Paper](https://arxiv.org/pdf/2403.10297)
 
 ## Demo 
 
