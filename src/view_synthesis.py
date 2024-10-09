@@ -54,27 +54,28 @@ if __name__ == "__main__":
                         help="Path to the output directory")
     parser.add_argument("--image_format", type=str,
                         default="png")
+    parser.add_argument("--nerf_out_dir", type=Path,
+                        help="Path to the output of trained nerf model")
 
     args = parser.parse_args()
-
+    
+    
+    os.chdir(args.nerf_out_dir)
     command = ['ns-render']
     command.append(args.mode)
-    command.append(['--load_config', args.config])
-    command.append(['--rendered-output-names', 
+    command.extend(['--load_config', args.config])
+    command.extend(['--rendered-output-names', 
                     args.rendered_output_names])
-    command.append(['--camera-path-filename', 
+    command.extend(['--camera-path-filename', 
                     args.camera_path])
-    command.append(['--output-format', args.output_format])
-    command.append(['--output-path'],
-                   args.output_path / args.dataset / args.scene)
-    command.append(['--image-format', args.image_format])
+    command.extend(['--output-format', args.output_format])
+    command.extend(['--output-path', args.output_path / args.dataset / args.scene])
+    command.extend(['--image-format', args.image_format])
 
-    results = subprocess.run(command, 
-                             capture_output=True, 
-                             text=True)
+    results = subprocess.call(command)
 
-    print(results.stdout)
-    print(results.stderr)
+    file_name_changes(args.camera_path, 
+                      args.output_path / args.dataset / args.scene)
 
 
 
